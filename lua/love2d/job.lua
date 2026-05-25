@@ -52,6 +52,7 @@ function job._start_process()
 
   job.state.exit_code = nil
   job.state.id = vim.fn.jobstart(cmd, {
+    pty = true,
     on_stdout = out_opts.on_stdout,
     on_stderr = out_opts.on_stderr,
     on_exit = function(jid, code)
